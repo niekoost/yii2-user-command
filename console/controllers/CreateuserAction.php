@@ -17,7 +17,7 @@ class CreateuserAction extends \yii\base\Action
      */
     public function run()
     {
-        $attributes = ?;
+        $attributes = [];
         User::create($attributes);
     }
 

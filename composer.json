@@ -15,7 +15,7 @@
     },
 	"autoload": {
 		"psr-4": {
-			"niekoost\\yii2-user-command": ""
+			"niekoost\\yii2-usr-command\\": ""
 		}
 	},
     "extra": {

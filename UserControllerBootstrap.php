@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace niekoost;
+namespace niekoost\yii2-user-command;
 
 use yii\base\Application;
 use yii\base\BootstrapInterface;

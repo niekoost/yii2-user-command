@@ -18,7 +18,7 @@ use yii\base\BootstrapInterface;
  * @package niekoost\user
  * @author Niek Oost <niek@oostsoft.nl>
  */
-class UserControllerBootstrap implements BootstrapInterface
+class Bootstrap implements BootstrapInterface
 {
 
     /**
@@ -29,7 +29,7 @@ class UserControllerBootstrap implements BootstrapInterface
     public function bootstrap($app)
     {
         if ($app instanceof \yii\console\Application) {
-            $app->controllerMap['user/create'] = 'niekoost\console\controllers\UserController';
+            $app->controllerMap['user/create'] = 'niekoost\yii2-user-command\console\controllers\UserController';
         }
     }
 }

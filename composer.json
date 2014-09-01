@@ -3,6 +3,7 @@
 	"description": "Manage Yii2 users from the console",
 	"type": "yii2-extension",
 	"keywords": ["yii2","extension","user","command line","shell","batch"],
+    "homepage": "https://github.com/niekoost/yii2-user-command",
 	"license": "MIT-Clause",
 	"authors": [
 		{
@@ -11,6 +12,7 @@
 		}
 	],
     "require": {
+        "php": ">=5.4.0",
         "yiisoft/yii2": "*"
     },
 	"autoload": {
@@ -19,7 +21,7 @@
 		}
 	},
     "extra": {
-        "bootstrap": "niekoost\\yii2-user-command\\UserControllerBootstrap"
+        "bootstrap": "niekoost\\yii2-user-command\\Bootstrap"
     }
 
 }

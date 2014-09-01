@@ -1,0 +1,25 @@
+{
+	"name": "niekoost/yii2-user-cli",
+	"description": "Manage Yii2 users from the console",
+	"type": "yii2-extension",
+	"keywords": ["yii2","extension","user","command line","shell","batch"],
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Niek Oost",
+			"email": "niek@oostsoft.nl"
+		}
+	],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+	"autoload": {
+		"psr-4": {
+			"niekoost\\yii2-user-cli": ""
+		}
+	},
+    "extra": {
+        "bootstrap": "niekoost\\yii2-user-cli\\UserControllerBootstrap"
+    }
+
+}

@@ -42,9 +42,11 @@ class UserController extends Controller
     public function actions()
     {
         $actions = [];
-        $actions[$name] = [
+        $actions['create'] = [
             'class'         => '\niekoost\console\controllers\CreateuserAction',
-            'generatorName' => 'create',
+            'username'      => $this->username,
+            'password'      => $this->password,
+            'email'         => $this->email,
         ];
         return $actions;
     }
@@ -52,13 +54,8 @@ class UserController extends Controller
     /**
      * @inheritdoc
      */
-    public function options($id)
-    {
-        $generator = Yii::createObject($this->generators[$id]);
-        return array_merge(
-            parent::options($id),
-            ['generate'],
-            array_keys($generator->attributes) // global for all actions -- TODO this is broken
-        );
+    public function options($id) {
+        return array('username', 'password', 'email');
     }
+
 }

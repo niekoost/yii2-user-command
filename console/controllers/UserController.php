@@ -5,7 +5,7 @@
  * @license   http://www.yiiframework.com/license/
  */
 
-namespace niekoost\yii2-user-command\console\controllers;
+namespace niekoost\console\controllers;
 
 use Yii;
 use yii\console\Controller;
@@ -19,11 +19,6 @@ use yii\console\Controller;
  */
 class UserController extends Controller
 {
-
-    public $generators = [
-        'create'        => ['class' => '\niekoost\yii2-user-command\console\controllers\CreateuserAction'],
-    ];
-
     /**
      * @var array stores attributes
      */
@@ -48,7 +43,7 @@ class UserController extends Controller
     {
         $actions = [];
         $actions[$name] = [
-            'class'         => '\niekoost\yii2-user-command\console\controllers\CreateuserAction',
+            'class'         => '\niekoost\console\controllers\CreateuserAction',
             'generatorName' => 'create',
         ];
         return $actions;

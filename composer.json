@@ -17,11 +17,11 @@
     },
 	"autoload": {
 		"psr-4": {
-			"niekoost\\yii2-usr-command\\": ""
+			"niekoost\\": ""
 		}
 	},
     "extra": {
-        "bootstrap": "niekoost\\yii2-user-command\\Bootstrap"
+        "bootstrap": "niekoost\\Bootstrap"
     }
 
 }

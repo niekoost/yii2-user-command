@@ -6,7 +6,7 @@
  */
 
 
-namespace niekoost\yii2-user-command\console\controllers;
+namespace niekoost\console\controllers;
 
 
 class CreateuserAction extends \yii\base\Action

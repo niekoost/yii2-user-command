@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-namespace niekoost\yii2-user-command;
+namespace niekoost;
 
 use yii\base\Application;
 use yii\base\BootstrapInterface;
@@ -29,7 +29,7 @@ class Bootstrap implements BootstrapInterface
     public function bootstrap($app)
     {
         if ($app instanceof \yii\console\Application) {
-            $app->controllerMap['user/create'] = 'niekoost\yii2-user-command\console\controllers\UserController';
+            $app->controllerMap['user/create'] = 'niekoost\console\controllers\UserController';
         }
     }
 }

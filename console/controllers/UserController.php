@@ -48,6 +48,19 @@ class UserController extends Controller
             'password'      => $this->password,
             'email'         => $this->email,
         ];
+        $actions['updateids'] = [
+            'class'         => '\niekoost\console\controllers\UpdateuseridsAction',
+            'username'      => $this->username,
+        ];
+        $params = Yii::$app->request->getParams();
+        foreach($params as $param) {
+            if(strpos($param, '--') == 0 && strpos($param, '_id=') !== FALSE) {
+                // only accept id-updates
+                $param = explode('=', $param);
+                $actions['updateids'][substr($param[0], 2)] = $param[1];
+            }
+        }
+
         return $actions;
     }
 
@@ -55,7 +68,20 @@ class UserController extends Controller
      * @inheritdoc
      */
     public function options($id) {
-        return array('username', 'password', 'email');
+        if($id == 'create') {
+            return array('username', 'password', 'email');
+        } else if($id == 'updateids') { 
+            $options = ['username'];
+            $params = Yii::$app->request->getParams();
+            foreach($params as $param) {
+                if(strpos($param, '--') == 0 && strpos($param, '_id=') !== FALSE) {
+                    // only accept id-updates
+                    $param = explode('=', $param);
+                    $options[] = substr($param[0], 2);
+                }
+            }
+            return $options;
+        }
     }
 
 }

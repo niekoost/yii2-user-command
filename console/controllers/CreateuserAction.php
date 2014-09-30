@@ -31,12 +31,13 @@ class CreateuserAction extends \yii\base\Action
             throw new \Exception('email is required');
         }
 
-        $attributes['username']=$this->username;
-        $attributes['password']=$this->password;
-        $attributes['email']=$this->email;
-        
-        $result = User::create($attributes);
-        if($result === null) {
+        $user = new User;
+        $user->username = $this->username;
+        $user->setPassword($this->password);
+        $user->email = $this->email;
+
+        $result = $user->save();
+        if($result === FALSE) {
             // @todo find out why
             throw new \Exception('User could not be created');
         }

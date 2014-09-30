@@ -21,7 +21,10 @@
 		}
 	},
     "extra": {
-        "bootstrap": "niekoost\\Bootstrap.php"
+        "bootstrap": "niekoost\\Bootstrap.php",
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
     }
 
 }
